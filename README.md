@@ -37,7 +37,7 @@ var yo = require('./yodash');
 **Note:**
 Yo.
 
-## Features *not* in Underscore
+## Features *not* in Lo-Dash or Underscore
 
  * ~100% Yo
  * Module bundles for Yo & [Yo](http://justyo.co)
