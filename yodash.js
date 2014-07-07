@@ -9259,34 +9259,34 @@
   /*--------------------------------------------------------------------------*/
 
   // export Lo-Dash
-  var _ = runInContext();
+  var yo = runInContext();
 
   // some AMD build optimizers like r.js check for condition patterns like the following:
   if (typeof define == 'function' && typeof define.amd == 'object' && define.amd) {
     // Expose Lo-Dash to the global object when an AMD loader is present to avoid
     // errors in cases where Lo-Dash is loaded by a script tag and not intended
     // as an AMD module. See http://requirejs.org/docs/errors.html#mismatch
-    root._ = _;
+    root.yo = yo;
 
     // define as an anonymous module so, through path mapping, it can be
     // referenced as the "underscore" module
     define(function() {
-      return _;
+      return yo;
     });
   }
   // check for `exports` after `define` in case a build optimizer adds an `exports` object
   else if (freeExports && freeModule) {
     // in Node.js or RingoJS
     if (moduleExports) {
-      (freeModule.exports = _)._ = _;
+      (freeModule.exports = yo).yo = yo;
     }
     // in Narwhal or Rhino -require
     else {
-      freeExports._ = _;
+      freeExports.yo = yo;
     }
   }
   else {
     // in a browser or Rhino
-    root._ = _;
+    root.yo = yo;
   }
 }.call(this));
